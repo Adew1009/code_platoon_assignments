@@ -1,0 +1,28 @@
+{
+"todo-tree.tree.showBadges": true ,
+
+"todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "text",
+    "foreground": "darkgreen",
+    "background": "gold",
+    "transparent": true,
+    "opacity": 90,
+   
+    // "iconColour": "blue"
+},
+"todo-tree.highlights.customHighlight": {
+    "TODO": {
+        "icon": "check",
+        "iconColour": "yellow",
+        "type": "line",
+        "gutterIcon": true,
+    },
+    "FIXME": {
+        "foreground": "darkblue",
+        "iconColour": "red",
+        "gutterIcon": true
+    }
+}
+}
+
