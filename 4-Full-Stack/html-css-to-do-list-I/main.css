@@ -1,0 +1,51 @@
+p {
+  font-size: 50px;
+  margin-top: 0;
+}
+h1 {
+  font-size: 40px;
+  font-weight: lighter;
+  background-color: grey;
+  border: 5px solid black;
+}
+body {
+  margin: 20;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+  border: 5px dashed black;
+  padding: 0 25px 10px 25px;
+  background-color: lightgreen;
+}
+
+#first_card {
+  padding: 50px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+em {
+    border:red solid 10px
+} */
+
+.card {
+    height: 50px;
+    width: 50px;
+    border: 1px black solid;
+}
+
+.link:hover {
+    background-color: blue;
+}
+
+.link:active {
+    background-color: gold;
+}
+
+#img {
+    display: flex;
+    width: 255px;
+    flex-wrap: wrap;
+}

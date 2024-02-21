@@ -1,0 +1,80 @@
+h1{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqcPQSGYDM3lsgqKYWTJ2Be1EE0LbjU7UfuTUG6mHDKbAXLfVerBdwTaq2csI-D39zeOo&usqp=CAU");
+    background-size: 110px;
+}
+#cap{
+
+    background-color: red;
+    text-align: center;
+}
+h1{ 
+    background-color:  transparent;
+    font-size: 100px;
+    align-content: center;
+    text-shadow: 10px 20px 60px black;
+} 
+.titl{
+    font-weight: 900;
+    color: red;
+    margin-top: 0;
+    text-align: center;
+
+}
+body{
+    background-color: darkgreen;
+}
+nav{
+    color:orange;
+    background-color:blue;
+    width: 100px;
+
+}
+h3{
+    color: red;
+    font-size:30px;
+    text-decoration: underline;
+    margin: 5px;
+}
+p{
+    color: orange;
+    margin: 0px
+}
+h2{
+    color:blue;
+    text-decoration: underline;
+    font-size: 50px;
+    margin-left: 30px;
+    margin-bottom: 0;
+}
+#image {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: auto;
+    
+}
+#borderstyle {
+    border-style: double;
+    border-color: black;
+    width: 160px;
+    font-color: red;
+}
+#boxshadow{
+    box-shadow: 2px 6px black;
+    width: 160px;
+    background-color: darkolivegreen;
+}
+#cursor {
+    cursor: pointer;
+    width:200px
+}
+#transition {
+text-shadow: 2px 4px 10px blue;
+}
+.texta{
+    text-align: center;
+}
+.purple{
+    color:lightskyblue;
+    font-style:initial;
+
+}
