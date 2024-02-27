@@ -8,6 +8,7 @@ h1{
     text-align: center;
 }
 h1{ 
+    background-image: url("https: //upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Australia-New_Guinea_%28orthographic_projection%29.svg/200px-Australia-New_Guinea_%28orthographic_projection%29.svg.png");
     background-color:  transparent;
     font-size: 100px;
     align-content: center;
@@ -56,7 +57,7 @@ h2{
     border-style: double;
     border-color: black;
     width: 160px;
-    font-color: red;
+    font-color: rgb(0, 255, 51);
 }
 #boxshadow{
     box-shadow: 2px 6px black;

@@ -1,0 +1,11 @@
+img{
+    height: 400px;
+    width: 400px
+}
+button{
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+}
