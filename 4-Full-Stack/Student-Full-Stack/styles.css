@@ -1,0 +1,32 @@
+h1 {
+    flex-wrap: wrap;
+    background-color: rgb(19, 19, 96);
+    text-align: center;
+    font-size: 50px;
+    color: rgb(241, 238, 234); 
+    
+}
+body {
+    background-image: url("https://png.pngtree.com/png-clipart/20211017/original/pngtree-school-logo-png-image_6851480.png");
+    background-size: 50%;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-color: rgb(19, 19, 96, 0.3);
+    
+
+}
+form {
+    opacity: .3;
+}
+
+h3 {
+    color: rgb(19, 19, 96);
+    font-size:30px;
+}
+ul{
+    background-color: rgb(241, 238, 234, .5);
+    color:rgb(19, 19, 96);
+    width:130%
+    background-width: 50%;
+
+}

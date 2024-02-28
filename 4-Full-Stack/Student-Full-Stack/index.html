@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School</title>
+    <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>School Data</h1>
+    </header>
+    <main>
+        <div>
+        <h3>Teachers</h3>
+        <button onclick="getTeachers()">Get Teachers</button>
+        <ul id="teacherContainer">
+        
+        </ul>
+        <form id="form" onsubmit="addTeacher(event)">
+            <input name="id" placeholder="ID" type="number" />
+            <input name="first_name" type="text" placeholder="First Name" />
+            <input name="last_name" type="text" placeholder="Last Name" />
+            <input name="age" placeholder="Age" type="number" />
+            <input name="subject" type="text" placeholder="Subject" />
+            <input name="students" type="text" placeholder="Students" />
+            <input type="submit" />
+        </form> 
+        </div>
+        <div>
+        <h3>Students</h3>
+        <button onclick="getStudents()">Get Students</button>
+        <ul id="studentContainer">
+
+        </ul>
+        <form id="form" onsubmit="addStudent(event)">
+            <input name="id" placeholder="ID" type="number" />
+            <input name="first_name" type="text" placeholder="First Name" />
+            <input name="last_name" type="text" placeholder="Last Name" />
+            <input name="age" placeholder="Age" type="number" />
+            <input name="class" type="text" placeholder="Class" />
+            <input name="teacher" type="text" placeholder="Teacher" />
+            <input type="submit" />
+        </form>
+        </div>
+            <div>
+                <h3>Subjects</h3>
+                <button onclick="getSubjects()">Get Subjects</button>
+                <ul id="subjectContainer">
+            
+                </ul>
+                <form id="form" onsubmit="addSubject(event)">
+                    <input name="id" placeholder="ID" type="number" />
+                    <input name="subject" type="text" placeholder="Subject" />
+                    <input type="submit" />
+                </form>
+            </div>
+    </main>
+</body>
+
+</html>
