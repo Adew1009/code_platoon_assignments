@@ -16,11 +16,13 @@ const getPokemon = async(event) => {
         img.src = responseData.sprites.front_default
         img.style.border = "5px yellow solid"
         img.style.borderRadius = "20px"
-        img.style.height = "200px"
+        img.style.height = "325px"
+        img.style.backgroundColor = "white"
         img2.src = responseData.sprites.front_shiny
         img2.style.border = "5px gold solid"
         img2.style.borderRadius = "20px"
-        img2.style.height = "200px"
+        img2.style.height = "325px"
+        img2.style.backgroundColor = "white"
     } 
     catch(err){
         console.log(err.message)
