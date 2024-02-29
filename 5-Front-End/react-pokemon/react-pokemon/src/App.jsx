@@ -1,6 +1,6 @@
-import axios from 'axios';
-import './App.css';
-import { useState, useEffect, useRef } from 'react';
+import axios from "axios";
+import "./App.css";
+import { useState, useEffect, useRef } from "react";
 
 function App() {
   //set type useState
@@ -9,7 +9,7 @@ function App() {
   const [randomPokemonImg, setRandomPokemonImg] = useState(null);
   //set the teammates useState
   const [teammates, setTeammates] = useState([]);
-  const previousType = useRef("")
+  const previousType = useRef("");
 
   //main function
 
@@ -18,27 +18,33 @@ function App() {
     try {
       setRandomPokemonImg(null);
       setTeammates([]);
-     
+
       const randomPokemonId = Math.floor(Math.random() * 898) + 1;
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`);
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`
+      );
       const data = await response.json();
       setRandomPokemonImg(data.sprites.front_default);
       if (previousType.current === data.types[0].type.name) {
-        getRandomPokemon()
+        getRandomPokemon();
       }
       setType(data.types[0].type.name);
       // getPokemonTeam()
     } catch (error) {
       console.log(error.message);
     }
-  }
-      // Fetch teammates data
-    const getPokemonTeam = async () => {
+  };
+  // Fetch teammates data
+  const getPokemonTeam = async () => {
     try {
       const teammatesData = [];
-      const responseTeammates = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+      const responseTeammates = await fetch(
+        `https://pokeapi.co/api/v2/type/${type}`
+      );
       const typeData = await responseTeammates.json();
-      const teammateNames = typeData.pokemon.slice(0, 5).map(p => p.pokemon.name);
+      const teammateNames = typeData.pokemon
+        .slice(0, 5)
+        .map((p) => p.pokemon.name);
 
       for (const teammateName of teammateNames) {
         const teammateSpriteUrl = await getPokemonSprite(teammateName);
@@ -54,7 +60,9 @@ function App() {
 
   const getPokemonSprite = async (pokemon) => {
     try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+      );
       const data = await response.json();
       return data.sprites.front_default;
     } catch (error) {
@@ -63,18 +71,14 @@ function App() {
     }
   };
 
-
   useEffect(() => {
-   getRandomPokemon()
-  }, [])
+    getRandomPokemon();
+  }, []);
   useEffect(() => {
-    if (type != "No Type to Display"){
-      getPokemonTeam()
+    if (type != "No Type to Display") {
+      getPokemonTeam();
     }
-  }, [type])
-
-
-  
+  }, [type]);
 
   return (
     <>
@@ -83,10 +87,15 @@ function App() {
         <button onClick={getRandomPokemon}>Get Random Pokemon</button>
       </div>
 
-     {randomPokemonImg && <div className="pokemonTeamContainer">
-        <p>{type ? type : "Type"}</p>
-        <img src={randomPokemonImg ? randomPokemonImg : null} alt="Random Pokemon" />
-      </div>}
+      {randomPokemonImg && (
+        <div className="pokemonTeamContainer">
+          <p>{type ? type : "Type"}</p>
+          <img
+            src={randomPokemonImg ? randomPokemonImg : null}
+            alt="Random Pokemon"
+          />
+        </div>
+      )}
 
       <div className="pokemonTeamatesContainer">
         {teammates.map((teammateImg, index) => (
