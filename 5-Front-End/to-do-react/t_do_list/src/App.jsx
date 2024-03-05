@@ -17,13 +17,11 @@ function App() {
     updatedTaskList[index].completed = !updatedTaskList[index].completed;
     setTaskList(updatedTaskList);
   }
-
   function removeComplete(index) {
-    const elementId = {index};
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.style.display = "none";
-    }
+   const newArr = taskList.filter((_,i) => i !== index);
+   setTaskList(newArr);
+   console.log(index)
+   console.log(taskList);
   }
 
   function newToList(event) {
