@@ -9,14 +9,22 @@ const CharactersPage = () => {
   const [allCharacters, setAllCharacters] = useState([]);
 
   const getAllCharacters = async () => {
-    try {
-      const response = await axios.get(
-        "https://rickandmortyapi.com/api/character/"
-      );
-      setAllCharacters(response.data.results);
-    } catch (error) {
-      console.error("An error occurred:", error);
+    let num = 1;
+    let tempData = [];
+    while (num < 43) {
+      try {
+        let response = await axios.get(
+          "https://rickandmortyapi.com/api/character/"
+        );
+        let results = response.data.results;
+        tempData = [...tempData, ...results];
+        //TODO     why do they both need the spread?
+        num++;
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
     }
+    setAllCharacters(tempData);
   };
   useEffect(() => {
     getAllCharacters();
