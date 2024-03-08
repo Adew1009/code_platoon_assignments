@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "../components/charactercard";
 import axios from "axios";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { useOutletContext } from "react-router-dom";
 
 const CharactersPage = () => {
   const [allCharacters, setAllCharacters] = useState([]);
+  const { favorites, setFavorites, addToFavorites, removeFromFavorites } =
+    useOutletContext();
 
   const getAllCharacters = async () => {
     let num = 1;
@@ -14,11 +14,10 @@ const CharactersPage = () => {
     while (num < 43) {
       try {
         let response = await axios.get(
-          "https://rickandmortyapi.com/api/character/"
+          `https://rickandmortyapi.com/api/character/?page=${num}`
         );
         let results = response.data.results;
         tempData = [...tempData, ...results];
-        //TODO     why do they both need the spread?
         num++;
       } catch (error) {
         console.error("An error occurred:", error);
@@ -38,7 +37,7 @@ const CharactersPage = () => {
           Characters of Rick and Morty
         </h1>
       </div>
-      <row className="d-flex justify-content-center align-content-betwe flex-wrap">
+      <row className="d-flex justify-content-center align-content-betweeen flex-wrap">
         {allCharacters.map((characterObject, index) => (
           <div
             className="d-flex justify-content-top flex-wrap m-4 "
@@ -49,10 +48,10 @@ const CharactersPage = () => {
             <CharacterCard
               image={characterObject.image}
               name={characterObject.name}
-              species={characterObject.species}
-              status={characterObject.status}
-              location={characterObject.location.name}
               key={index}
+              id={characterObject.id}
+              setFavorites={setFavorites}
+              favorites={favorites}
             />
             <br />
             <br />
