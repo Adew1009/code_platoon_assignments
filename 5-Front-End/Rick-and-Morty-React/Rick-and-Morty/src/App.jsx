@@ -48,8 +48,13 @@ function App() {
         onClose={() => setShowAlert(false)}
         dismissible
       >
-        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-        <p>You can only have 4 errors!</p>
+        <Alert.Heading>
+          Oh Jeez! You did it now! You got an error!
+        </Alert.Heading>
+        <p>
+          You can only have 4 four favorites! You will need to send some back to
+          another dimension to pick this one.{" "}
+        </p>
       </Alert>
       <div id="App">
         <PageNavbar />
